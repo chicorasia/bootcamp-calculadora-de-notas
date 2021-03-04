@@ -4,23 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/main_banner"
+        android:background="@color/secondaryLightColor"
+        android:layout_margin="8dp"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:textAlignment="center"
+        android:text="@string/texto_banner"
+        app:layout_constraintStart_toStartOf="@id/main_banner"
+        app:layout_constraintTop_toTopOf="@id/main_banner"
+        app:layout_constraintBottom_toBottomOf="@id/main_banner"
+        android:layout_gravity="center_horizontal" />
 
     <EditText
         android:id="@+id/main_nota_1_edt"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/nota_1"
+        app:layout_constraintTop_toBottomOf="@id/main_banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        />
 
     <EditText
         android:id="@+id/main_nota_2_edt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/nota_2"
@@ -32,6 +57,7 @@
         android:id="@+id/main_faltas_edt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/faltas"

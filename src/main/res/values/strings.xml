@@ -5,4 +5,5 @@
     <string name="nota_2">Grade 2</string>
     <string name="faltas">Absences</string>
     <string name="limpar">Clear Fields</string>
+    <string name="texto_banner">Please type in the students grades and absences and press CALCULATE.</string>
 </resources>
