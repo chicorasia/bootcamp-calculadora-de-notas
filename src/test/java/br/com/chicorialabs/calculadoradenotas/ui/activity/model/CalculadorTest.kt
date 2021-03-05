@@ -20,7 +20,7 @@ class CalculadorTest{
     @Test
     fun deve_RetornarFalse_QuandoRecebeDuasNotasAbaixoDaNotaDeCorte(){
 
-        val resultado = calculador.verificaNotaDeCorte(4.0, 3.0)
+        val resultado = calculador.verificaNotaDeCorte(4.0, 3.9)
 
         println(resultado)
         assertFalse(resultado)
@@ -71,6 +71,21 @@ class CalculadorTest{
         assertTrue(resultado)
     }
 
+    @Test
+    fun deve_CalcularMediaCorretamente_AoReceberDoisValores() {
+        val resultado = calculador.media(10.0, 5.0)
+
+        assertTrue(resultado == 7.50)
+
+    }
+
+    @Test
+    fun deve_CalcularMediaCorretamente_AoReceberTresValores() {
+        val resultado = calculador.media(10.0, 5.0, 6.0)
+
+        assertTrue(resultado == 7.0)
+
+    }
 
 
 

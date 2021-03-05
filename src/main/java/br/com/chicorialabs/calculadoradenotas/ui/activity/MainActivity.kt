@@ -1,6 +1,5 @@
 package br.com.chicorialabs.calculadoradenotas.ui.activity
 
-import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
@@ -19,6 +18,11 @@ class MainActivity : AppCompatActivity() {
 
         val calculador = Calculador()
 
+        configuraBotaoCalcular(calculador)
+        configuraBtnLimparCampos()
+    }
+
+    private fun configuraBotaoCalcular(calculador: Calculador) {
         main_calcular_btn.setOnClickListener {
 
             try {
@@ -27,8 +31,10 @@ class MainActivity : AppCompatActivity() {
                 val faltas: Int = Integer.parseInt(main_faltas_edt.text.toString())
                 val resultado = calculador.avalia(nota1, nota2, faltas)
 
-                mostraResultado(main_resultado, resultado,
-                    calculador.media(nota1, nota2), faltas)
+                mostraResultado(
+                    main_resultado, resultado,
+                    calculador.media(nota1, nota2), faltas
+                )
 
             } catch (e: NumberFormatException) {
                 e.printStackTrace()
@@ -36,8 +42,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
-        configuraBtnLimparCampos()
     }
 
     private fun mostraResultado(textView: TextView, resultado: Boolean, media: Double, faltas: Int) {

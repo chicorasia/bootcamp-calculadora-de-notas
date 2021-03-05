@@ -7,18 +7,19 @@ class Calculador {
         return media >= 6.0
     }
 
-    fun media(nota1: Double, nota2: Double) = ((nota1 + nota2) / 2)
+//    fun media(nota1: Double, nota2: Double) = ((nota1 + nota2) / 2)
 
     fun verificaNumeroDeFaltas(faltas: Int): Boolean {
         return faltas <= 10
     }
 
     fun verificaNotaDeCorte(vararg notas: Double): Boolean {
-        var resultado = true
-        for(nota in notas){
-            resultado = nota >= 5.0
-        }
-        return resultado
+        return notas.all { it >=  4.0}
+//        var resultado = true
+//        for(nota in notas){
+//            resultado = nota >= 5.0
+//        }
+//        return resultado
     }
 
     fun avalia(nota1: Double, nota2: Double, faltas: Int): Boolean {
@@ -27,6 +28,11 @@ class Calculador {
                 verificaNumeroDeFaltas(faltas)
     }
 
+    fun media(vararg notas: Double): Double {
+        var somatoria = 0.0
+        notas.forEach { it -> somatoria += it }
+        return somatoria / notas.size
+    }
 
 
 }
