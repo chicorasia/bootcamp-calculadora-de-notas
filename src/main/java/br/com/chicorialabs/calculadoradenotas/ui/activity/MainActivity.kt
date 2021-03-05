@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
             } catch (e: NumberFormatException) {
                 e.printStackTrace()
+                main_resultado.text = ""
             }
 
         }
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             main_nota_1_edt.text.clear()
             main_nota_2_edt.text.clear()
             main_faltas_edt.text.clear()
+            main_resultado.text = ""
         }
     }
 }
