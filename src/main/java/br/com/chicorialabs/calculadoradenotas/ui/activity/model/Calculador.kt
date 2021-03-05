@@ -27,4 +27,6 @@ class Calculador {
                 verificaNumeroDeFaltas(faltas)
     }
 
+
+
 }

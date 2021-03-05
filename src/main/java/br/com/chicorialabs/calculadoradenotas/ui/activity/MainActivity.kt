@@ -1,9 +1,11 @@
 package br.com.chicorialabs.calculadoradenotas.ui.activity
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import br.com.chicorialabs.calculadoradenotas.R
 import br.com.chicorialabs.calculadoradenotas.ui.activity.model.Calculador
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,15 +26,21 @@ class MainActivity : AppCompatActivity() {
                 val faltas: Int = Integer.parseInt(main_faltas_edt.text.toString())
                 val resultado = calculador.avalia(nota1, nota2, faltas)
 
-                if(resultado){
+                if (resultado) {
                     main_resultado.text = resources.getText(R.string.aprovado)
-                    main_resultado.setTextColor(Color.GREEN)
+                    main_resultado.setTextColor(
+                        ContextCompat
+                            .getColor(this, R.color.textoAprovadoColor)
+                    )
                 } else {
                     main_resultado.text = resources.getText(R.string.reprovado)
-                    main_resultado.setTextColor(Color.RED)
+                    main_resultado.setTextColor(
+                        ContextCompat
+                            .getColor(this, R.color.textoReprovadoColor)
+                    )
                 }
 
-            } catch (e: NumberFormatException){
+            } catch (e: NumberFormatException) {
                 e.printStackTrace()
             }
 
@@ -43,8 +51,5 @@ class MainActivity : AppCompatActivity() {
             main_nota_2_edt.text.clear()
             main_faltas_edt.text.clear()
         }
-
-
-
     }
 }
