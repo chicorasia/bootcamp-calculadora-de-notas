@@ -5,5 +5,7 @@
     <string name="nota_2">Nota 2</string>
     <string name="faltas">Faltas</string>
     <string name="limpar">Limpar campos</string>
-    <string name="texto_banner">Digite as notas e faltas do aluno e clique em CALCULAR.</string>
+    <string name="texto_banner">Digite as suas notas e faltas e clique em CALCULAR.</string>
+    <string name="aprovado">Parabéns, você foi aprovado!</string>
+    <string name="reprovado">Lamento, você foi reprovado.</string>
 </resources>
