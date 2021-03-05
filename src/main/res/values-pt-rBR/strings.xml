@@ -6,6 +6,6 @@
     <string name="faltas">Faltas</string>
     <string name="limpar">Limpar campos</string>
     <string name="texto_banner">Digite as suas notas e faltas e clique em CALCULAR.</string>
-    <string name="aprovado">Parabéns, você foi aprovado!</string>
-    <string name="reprovado">Lamento, você foi reprovado.</string>
+    <string name="aprovado">Parabéns, você foi aprovado com média %1$s e %2$d falta(s)!</string>
+    <string name="reprovado">Lamento, você foi reprovado. Sua média foi %1$s e você teve %2$d falta(s).</string>
 </resources>

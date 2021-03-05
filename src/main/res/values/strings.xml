@@ -6,6 +6,6 @@
     <string name="faltas">Absences</string>
     <string name="limpar">Clear Fields</string>
     <string name="texto_banner">Please type in the your grades and absences and press CALCULATE.</string>
-    <string name="aprovado">Congratulations, you have passed!</string>
-    <string name="reprovado">Im sorry, you have failed this class.</string>
+    <string name="aprovado">Congratulations, you have passed with average %1$s and %2$d absences!</string>
+    <string name="reprovado">Im sorry, you have failed this class average %1$s and %2$d absences.</string>
 </resources>

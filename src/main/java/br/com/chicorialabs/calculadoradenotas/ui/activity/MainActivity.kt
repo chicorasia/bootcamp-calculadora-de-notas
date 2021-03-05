@@ -3,6 +3,7 @@ package br.com.chicorialabs.calculadoradenotas.ui.activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -26,19 +27,8 @@ class MainActivity : AppCompatActivity() {
                 val faltas: Int = Integer.parseInt(main_faltas_edt.text.toString())
                 val resultado = calculador.avalia(nota1, nota2, faltas)
 
-                if (resultado) {
-                    main_resultado.text = resources.getText(R.string.aprovado)
-                    main_resultado.setTextColor(
-                        ContextCompat
-                            .getColor(this, R.color.textoAprovadoColor)
-                    )
-                } else {
-                    main_resultado.text = resources.getText(R.string.reprovado)
-                    main_resultado.setTextColor(
-                        ContextCompat
-                            .getColor(this, R.color.textoReprovadoColor)
-                    )
-                }
+                mostraResultado(main_resultado, resultado,
+                    calculador.media(nota1, nota2), faltas)
 
             } catch (e: NumberFormatException) {
                 e.printStackTrace()
@@ -47,6 +37,28 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        configuraBtnLimparCampos()
+    }
+
+    private fun mostraResultado(textView: TextView, resultado: Boolean, media: Double, faltas: Int) {
+        if (resultado) {
+            textView.text = resources.getString(R.string.aprovado,
+                media.toString(), faltas)
+            textView.setTextColor(
+                ContextCompat
+                    .getColor(this, R.color.textoAprovadoColor)
+            )
+        } else {
+            textView.text = resources.getString(R.string.reprovado,
+                media.toString(), faltas)
+            textView.setTextColor(
+                ContextCompat
+                    .getColor(this, R.color.textoReprovadoColor)
+            )
+        }
+    }
+
+    private fun configuraBtnLimparCampos() {
         main_limpar_btn.setOnClickListener {
             main_nota_1_edt.text.clear()
             main_nota_2_edt.text.clear()
